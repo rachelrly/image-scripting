@@ -8,7 +8,7 @@ Read my Medium post about sips [here](https://rachelrly.medium.com/how-to-compre
 
 ### resize.sh
 
-This is the basic script that takes large, oversized screenshots and turns them into web-appropriate `.jpeg`s. 
+This is the basic script that takes large, oversized screenshots and turns them into web-appropriate `.jpegs`. 
 
 ### /test-images
 
