@@ -6,14 +6,10 @@
 # makes two copies of original images
 # one is larger for larger screens, etc
 # go to this specific directory
-#read -p "Enter batch prefix: " prefix
-if [${#} -tt prefix]
-    echo "Testing, testing ${prefix}"
-fi
-
-for i in *.[jpg|png];
-do sips -s format jpeg -s formatOptions 70 "${i}" --out "${prefix}-${i}."
-echo "Converting ${i} to a compressed jpeg";done
+read -p "Enter batch prefix: " prefix
+for i in *.*;
+    do sips -s format jpeg -s formatOptions 70 "${i}" --out "${prefix}-${i}."
+    echo "Converting ${i} to a compressed jpeg";done
 
 # if [ ${#} -ne 3 ]
 # then
