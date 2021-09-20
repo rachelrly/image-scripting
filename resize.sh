@@ -1,15 +1,18 @@
 #!/bin/bash
-# A simple bash script that uses AppleScript and ImageEvents to
-# recursively transverse a directory structure and convert 
-# between image formats
+# A simple bash script that uses the sips library to convert images for web
+
 
 
 # makes two copies of original images
 # one is larger for larger screens, etc
 # go to this specific directory
+#read -p "Enter batch prefix: " prefix
+if [${#} -tt prefix]
+    echo "Testing, testing ${prefix}"
+fi
 
-for i in *.jpg; 
-do sips --cropToHeightWidth 100 100 -s format jpeg -s formatOptions 70 "${i}" --out "./"
+for i in *.[jpg|png];
+do sips -s format jpeg -s formatOptions 70 "${i}" --out "${prefix}-${i}."
 echo "Converting ${i} to a compressed jpeg";done
 
 # if [ ${#} -ne 3 ]
