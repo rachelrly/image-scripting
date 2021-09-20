@@ -3,8 +3,7 @@
 
 # copy folder of images
 
-
-read -p "Enter batch prefix: " prefix
+echo "Naming all files with the prefix ${1}"
 for i in *.*;
-    do sips -s format jpeg -s formatOptions 70 "${i}" --out "${prefix}-${i}"
+    do sips -s format jpeg -s formatOptions 70 "${i}" --out "${1}-${i}.jpg"
     echo "Converting ${i} to a compressed jpeg";done
