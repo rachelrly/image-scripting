@@ -27,6 +27,11 @@ echo "Naming all files with the prefix ${1}"
 # if [!formatOpt]; then 
 #     echo "Could not format image. Goodbye";done
 
+
+# TODO: Make -Z input (sets longest side)
+longestSide=500
+quality=high
+
 for i in *.*;
-    do sips -s format jpeg -s formatOptions 30  "${i}" --out "${1}-${i%png}jpg"
+    do sips -s format jpeg -s formatOptions $quality -Z $longestSide "${i}" --out "${1}-${i%png}jpg"
     echo "Converting ${i} to a compressed jpeg";done
