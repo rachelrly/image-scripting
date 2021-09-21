@@ -10,6 +10,10 @@ Read my Medium post about sips [here](https://rachelrly.medium.com/how-to-compre
 
 This is the basic script that takes large, oversized screenshots and turns them into web-appropriate `.jpegs`. 
 
+### test.sh
+
+This is an idempotent test that runs `resize.sh` after copying the sample images. This is meant to be run from the root dir. 
+
 ### /test-images
 
 This folder contains five test `.png` images
