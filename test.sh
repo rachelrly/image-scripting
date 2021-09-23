@@ -6,6 +6,6 @@
 rm -rf test1 # delete test folder if already present
 cp -a test-images test1
 cd test1 
-bash ../resize.sh test1
+bash ../resize.sh $1
 cd ..
 echo "Created test images in /test1"
