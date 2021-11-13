@@ -8,7 +8,7 @@ Read my Medium post about sips [here](https://rachelrly.medium.com/how-to-compre
 
 ## tl;dr
 
-`sips -s format jpeg -s formatOptions high -Z 500 "$img" --out $new_img`
+Runs `sips -s format jpeg -s formatOptions high -Z 500 "$img" --out $new_img` for every image in the directory.
 
 ## Codebase
 
