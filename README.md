@@ -1,14 +1,16 @@
 # Image Conversion Scripting with Sips
 
+## tl;dr
+
+Runs `sips -s format jpeg -s formatOptions high -Z 500 "$img" --out $new_img` for every image in the directory.
+
+## Overview
+
 This repository contains my go-to image conversion scripts to resize images for my websites with the MacOS library, sips.
 
 It is meant to take large, oversized screenshots and turns them into web-appropriate files.
 
 Read my Medium post about sips [here](https://rachelrly.medium.com/how-to-compress-images-in-the-mac-terminal-57f8ddd11926).
-
-## tl;dr
-
-Runs `sips -s format jpeg -s formatOptions high -Z 500 "$img" --out $new_img` for every image in the directory.
 
 ## Codebase
 
