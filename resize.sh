@@ -1,37 +1,28 @@
 #!/bin/bash
-# A simple bash script that uses the sips library to convert images for web
 
-# Run the script with a positional argument to prefix the batch resized files
+function resize {
+    img_file=$1
+    img=${img_file##*/}
 
-#if prefix
-echo "Naming all files with the prefix ${1}"
-# read -p "Do you want to use the default format options?
+    ext="${img##*.}"
+    name="${img%.*}"
 
-# To format images at 70% quality, press ENTER. 
+    echo "Converting $img from $ext to compressed jpeg"
 
-# To format at a specified quality, enter a number between 1 and 100 " format
+    longestSide=500
+    quality=high
 
-# echo "THIS IS THE VARIABLE ${formatOpt}"
-# if ($format = ""); then 
-#     formatOpt = 70
-# else
-#     regex ='^[0-9]+$'
-#     if ! [[ $formatOpt =~ $regex ]]; then
-#         formatOpt = formatOpt
-#     else
-#        read -p "${format} is not a valid formatting option. To proceed with the default options, press ENTER."
-#        formatOpt = 70
-#     fi
-# fi
+    new_img="$name.jpg"
 
-# if [!formatOpt]; then 
-#     echo "Could not format image. Goodbye";done
+    sips -s format jpeg -s formatOptions $quality -Z $longestSide "$img" --out $new_img
 
-
-# TODO: Make -Z input (sets longest side)
-longestSide=500
-quality=high
+    if test -f $new_img; then 
+        echo "Successfully converted from $img to $new_img"  
+        ls -l $new_img
+    else 
+        echo "Conversion of $img failed"
+    fi
+}
 
 for i in *.*;
-    do sips -s format jpeg -s formatOptions $quality -Z $longestSide "${i}" --out "${1}-${i%png}jpg"
-    echo "Converting ${i} to a compressed jpeg";done
+    do resize $i;done

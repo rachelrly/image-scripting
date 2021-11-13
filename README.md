@@ -1,18 +1,18 @@
 # Image Conversion Scripting with Sips
 
-This repository contains my go-to image conversion scripts to resize images for my websites with the MacOS library, sips. 
+This repository contains my go-to image conversion scripts to resize images for my websites with the MacOS library, sips.
 
-Read my Medium post about sips [here](https://rachelrly.medium.com/how-to-compress-images-in-the-mac-terminal-57f8ddd11926). 
+Read my Medium post about sips [here](https://rachelrly.medium.com/how-to-compress-images-in-the-mac-terminal-57f8ddd11926).
 
 ## Codebase
 
 ### resize.sh
 
-This is the basic script that takes large, oversized screenshots and turns them into web-appropriate `.jpegs`. 
+This is the basic script that takes large, oversized screenshots and turns them into web-appropriate `.jpgs`.
 
 ### test.sh
 
-This is an idempotent test that runs `resize.sh` after copying the sample images. This is meant to be run from the root dir. 
+This is an idempotent test that runs `resize.sh` after copying the sample images. This is meant to be run from the root dir.
 
 ### /test-images
 
