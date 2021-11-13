@@ -6,6 +6,10 @@ It is meant to take large, oversized screenshots and turns them into web-appropr
 
 Read my Medium post about sips [here](https://rachelrly.medium.com/how-to-compress-images-in-the-mac-terminal-57f8ddd11926).
 
+## tl;dr
+
+`sips -s format jpeg -s formatOptions high -Z 500 "$img" --out $new_img`
+
 ## Codebase
 
 ### resize.sh
